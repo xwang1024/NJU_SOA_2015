@@ -1,34 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://jw.nju.edu.cn/schema" xmlns="http://jw.nju.edu.cn/schema" xmlns:school="http://www.nju.edu.cn/schema" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://jw.nju.edu.cn/schema" xmlns="http://jw.nju.edu.cn/schema"
+	xmlns:school="http://www.nju.edu.cn/schema" elementFormDefault="qualified">
 
-	<xs:import namespace="http://www.nju.edu.cn/schema" schemaLocation="personInfo.xsd" />
-	<xs:include schemaLocation="course.xsd"/>
+	<xs:import namespace="http://www.nju.edu.cn/schema"
+		schemaLocation="personInfo.xsd" />
+	<xs:include schemaLocation="course.xsd" />
 
+	<!-- 成绩类型 -->
 	<xs:simpleType name="scoreType">
-		<xs:restriction base="xs:positiveInteger">
-		    <xs:minInclusive value="0"/>
-		    <xs:maxInclusive value="100"/>
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0" />
+			<xs:maxInclusive value="100" />
 		</xs:restriction>
 	</xs:simpleType>
-
+	
+	<!-- 参加课程年份类型 -->
+	<xs:simpleType name="attendYearType">
+		<xs:restriction base="xs:gYear">
+			<xs:minInclusive value="1902" />
+			<xs:maxInclusive value="2500" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!-- 参加课程学期类型 -->
+	<xs:simpleType name="attendTermType">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1" />
+			<xs:maxInclusive value="4" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!-- 成绩备注类型 -->
+	<xs:simpleType name="scoreCommentType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0" />
+			<xs:maxLength value="20" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!-- 课程成绩项类型 -->
 	<xs:complexType name="scoreItemType">
 		<xs:sequence>
-			<xs:element name="courseID" type="courseIDType"/>
-			<xs:element name="score" type="scoreType"/>
+			<xs:element name="courseId" type="courseIdType" />
+			<xs:element name="attendYear" type="attendYearType" />
+			<xs:element name="attendTerm" type="attendTermType" />
+			<xs:element name="score" type="scoreType" />
+			<xs:element name="comment" type="scoreCommentType" />
 		</xs:sequence>
 	</xs:complexType>
-
+	
+	<!-- 成绩列表类型 -->
 	<xs:complexType name="scoreListType">
 		<xs:sequence>
-			<xs:element name="scoreItem" maxOccurs="unbounded" type="scoreItemType"/>
+			<xs:element name="scoreItem" maxOccurs="unbounded" type="scoreItemType" />
 		</xs:sequence>
 	</xs:complexType>
-
+	
+	<!-- 学生元素 -->
 	<xs:element name="student">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="personInfo" ref="personInfo"/>
-				<xs:element name="scoreList" type="scoreListType"/>
+				<xs:element ref="school:personInfo" />
+				<xs:element name="scoreList" type="scoreListType" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

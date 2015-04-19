@@ -1,64 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://jw.nju.edu.cn/schema" xmlns="http://jw.nju.edu.cn/schema" xmlns:school="http://www.nju.edu.cn/schema" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://jw.nju.edu.cn/schema" xmlns="http://jw.nju.edu.cn/schema"
+	xmlns:school="http://www.nju.edu.cn/schema" elementFormDefault="qualified">
 
-	<xs:import namespace="http://www.nju.edu.cn/schema" schemaLocation="personInfo.xsd" />
+	<xs:import namespace="http://www.nju.edu.cn/schema"
+		schemaLocation="personInfo.xsd" />
 
-	<xs:simpleType name="courseIDType">
+	<!-- 课程号类型 -->
+	<xs:simpleType name="courseIdType">
 		<xs:restriction base="xs:integer">
-		    <xs:pattern value="[0-9]{6,8}"/>
+			<xs:pattern value="[0-9]{6,8}" />
 		</xs:restriction>
 	</xs:simpleType>
 
-	<xs:simpleType name="courseNameType">
+	<!-- 课程中文名类型 -->
+	<xs:simpleType name="courseChNameType">
 		<xs:restriction base="xs:string">
-			<xs:minLength value="2"/>
-    		<xs:maxLength value="20"/>
+			<xs:minLength value="2" />
+			<xs:maxLength value="20" />
 		</xs:restriction>
 	</xs:simpleType>
 
+	<!-- 课程英文名类型 -->
+	<xs:simpleType name="courseEnNameType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="2" />
+			<xs:maxLength value="20" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- 课程学分类型 -->
 	<xs:simpleType name="courseCreditType">
 		<xs:restriction base="xs:positiveInteger">
-		    <xs:minInclusive value="1"/>
-		    <xs:maxInclusive value="8"/>
+			<xs:minInclusive value="1" />
+			<xs:maxInclusive value="8" />
 		</xs:restriction>
 	</xs:simpleType>
 
+	<!-- 课程学时类型 -->
+	<xs:simpleType name="courseHourPerWeekType">
+		<xs:restriction base="xs:positiveInteger">
+			<xs:minInclusive value="1" />
+			<xs:maxInclusive value="8" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- 课程类型类型 -->
 	<xs:simpleType name="courseTypeType">
 		<xs:restriction base="xs:string">
-		    <xs:enumeration value="通修课"/>
-		    <xs:enumeration value="核心课"/>
-		    <xs:enumeration value="平台课"/>
-		    <xs:enumeration value="指选课"/>
-		   	<xs:enumeration value="选修课"/>
+			<xs:enumeration value="通修" />
+			<xs:enumeration value="核心" />
+			<xs:enumeration value="平台" />
+			<xs:enumeration value="指选" />
+			<xs:enumeration value="选修" />
 		</xs:restriction>
 	</xs:simpleType>
 
+	<!-- 课程校区类型 -->
 	<xs:simpleType name="courseCampusType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="仙林"/>
-		    <xs:enumeration value="鼓楼"/>
+			<xs:enumeration value="仙林" />
+			<xs:enumeration value="鼓楼" />
 		</xs:restriction>
 	</xs:simpleType>
 
+	<!-- 课程教室类型 -->
 	<xs:simpleType name="courseClassroomType">
 		<xs:restriction base="xs:string">
-			<xs:minLength value="0"/>
-    		<xs:maxLength value="20"/>
+			<xs:minLength value="0" />
+			<xs:maxLength value="20" />
 		</xs:restriction>
 	</xs:simpleType>
 
+	<!-- 课程元素 -->
 	<xs:element name="course">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="id" type="courseIDType"/>
-				<xs:element name="name" type="couseNameType"/>
-				<xs:element name="teacherID" type="school:schoolIDType"/>
-				<xs:element name="credit" type="courseCreditType"/>
-				<xs:element name="type" type="courseTypeType"/>
-				<xs:element name="campus" type="courseCampusType"/>
-				<xs:element name="classroom" type="courseClassroomType"/>
+				<xs:element name="id" type="courseIdType" />
+				<xs:element name="chName" type="courseChNameType" />
+				<xs:element name="enName" type="courseEnNameType" />
+				<xs:element name="teacherId" type="school:personIdType" />
+				<xs:element name="credit" type="courseCreditType" />
+				<xs:element name="hourPerWeek" type="courseHourPerWeekType" />
+				<xs:element name="type" type="courseTypeType" />
+				<xs:element name="campus" type="courseCampusType" />
+				<xs:element name="classroom" type="courseClassroomType" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-
 </xs:schema>
