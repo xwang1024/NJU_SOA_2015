@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://jw.nju.edu.cn/schema" xmlns="http://jw.nju.edu.cn/schema" xmlns:school="http://www.nju.edu.cn/schema" elementFormDefault="qualified">
+
+	<xs:import namespace="http://www.nju.edu.cn/schema" schemaLocation="personInfo.xsd" />
+	<xs:include schemaLocation="course.xsd"/>
+
+	<xs:simpleType name="scoreType">
+		<xs:restriction base="xs:positiveInteger">
+		    <xs:minInclusive value="0"/>
+		    <xs:maxInclusive value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="scoreItemType">
+		<xs:sequence>
+			<xs:element name="courseID" type="courseIDType"/>
+			<xs:element name="score" type="scoreType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="scoreListType">
+		<xs:sequence>
+			<xs:element name="scoreItem" maxOccurs="unbounded" type="scoreItemType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="student">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="personInfo" ref="personInfo"/>
+				<xs:element name="scoreList" type="scoreListType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

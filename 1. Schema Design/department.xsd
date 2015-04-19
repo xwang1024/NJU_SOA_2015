@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.nju.edu.cn/schema" xmlns="http://www.nju.edu.cn/schema" elementFormDefault="qualified">
+	
+	<!-- 部门名称类型 -->
+	<xs:simpleType name="departmentNameType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="2"/>
+    		<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- 部门类型类型 -->
+	<xs:simpleType name="departmentTypeType">
+		<xs:restriction base="xs:string">
+		    <xs:enumeration value="党群组织"/>
+		    <xs:enumeration value="行政部门"/>
+		    <xs:enumeration value="直属单位"/>
+		    <xs:enumeration value="院系"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- 部门描述类型 -->
+	<xs:simpleType name="departmentDescriptionType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="0"/>
+    		<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- 部门元素定义 -->
+	<xs:element name="department">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="departmentNameType"/>
+				<xs:element name="type" type="departmentTypeType"/>
+				<xs:element name="description" type="departmentDescriptionType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

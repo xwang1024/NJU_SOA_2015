@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.nju.edu.cn/schema" xmlns="http://www.nju.edu.cn/schema" elementFormDefault="qualified">
+
+	<xs:include schemaLocation="Department.xsd"/>
+
+	<xs:simpleType name="schoolIDType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="2"/>
+    		<xs:maxLength value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="personNameType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="2"/>
+    		<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="genderType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="男|女"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="birthdayType">
+		<xs:restriction base="xs:date"/>
+	</xs:simpleType>
+
+	<xs:element name="personInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="schoolID" type="schoolIDType"/>
+				<xs:element name="name" type="personNameType"/>
+				<xs:element name="gender" type="genderType"/>
+				<xs:element name="birthday" type="birthdayType"/>
+				<xs:element name="department" type="departmentNameType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
