@@ -17,5 +17,5 @@ DOM Parser：
   特点：Document Object Model、需要将整个XML读取并解析、将数据模型转换为对象模型、每一个对象都被作为一个node
   过程：创建DOM Parser、读取XML创建字典、反馈读取的过程中遇到的问题、构造DOM树、DOM树操作、XML输出
   注意：在一个节点之前或之后可能有White Space节点，最上层的是DocumentElement节点，代表整个DOM树
-  操作：详见DOMParserPractice.java
+  操作：详见DOMParserPractice.java 
   
