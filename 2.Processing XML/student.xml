@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<student gender="女"
+	schoolId="121250001"
+	xmlns="http://jw.nju.edu.cn/student"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://jw.nju.edu.cn/student student.xsd">
+	<name>矢泽妮可</name>
+	<birthday>1997-07-22</birthday>
+</student>

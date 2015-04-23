@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://jw.nju.edu.cn/student"
+	xmlns:tns="http://jw.nju.edu.cn/student" elementFormDefault="qualified">
+	<element name="student">
+		<complexType>
+			<sequence>
+				<element name="name" type="string" />
+				<element name="birthday" type="date" />
+			</sequence>
+			<attribute name="schoolId" type="string" />
+			<attribute name="gender">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="男" />
+						<enumeration value="女" />
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+</schema>
