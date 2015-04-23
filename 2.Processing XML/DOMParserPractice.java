@@ -110,6 +110,9 @@ public class DOMParserPractice {
 		});
 		// 将外部文件转换为document
 		Document doc = docBuilder.parse(new File("student.xml"));
+		/* 
+		 * 使用XPath的话好像体现不出dom操作的感觉。。。
+		 * 
 		// XPath 工厂
 		XPathFactory xpathFactory = XPathFactory.newInstance();
 		// XPath 实例
@@ -135,7 +138,8 @@ public class DOMParserPractice {
 			}
 		});
 		// XPath需要带前缀
-		Node node = (Node) xpath.evaluate("/jw:student/jw:name", doc, XPathConstants.NODE);
+		Node node = (Node) xpath.evaluate("/jw:student/jw:name", doc, XPathConstants.NODE);*/
+		Node node = doc.getElementsByTagName("name").item(0);
 		// 修改name的文本内容
 		node.setTextContent("西木野真姬");
 		return doc;
