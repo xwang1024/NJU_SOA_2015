@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<studentList>
+	<student gender="女" schoolId="121250001" xmlns="http://jw.nju.edu.cn/student" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://jw.nju.edu.cn/student student.xsd">
+		<name>矢泽妮可</name>
+		<birthday>1997-07-22</birthday>
+	</student>
+	<student gender="女" schoolId="121250002" xmlns="http://jw.nju.edu.cn/student" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://jw.nju.edu.cn/student student.xsd">
+		<name>西木野真姬</name>
+		<birthday>1999-04-19</birthday>
+	</student>
+	<student gender="女" schoolId="121250003" xmlns="http://jw.nju.edu.cn/student" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://jw.nju.edu.cn/student student.xsd">
+		<name>东条希</name>
+		<birthday>1997-06-09</birthday>
+	</student>
+</studentList>

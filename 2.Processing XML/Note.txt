@@ -34,4 +34,13 @@ XSL(eXtensible Stylesheet Language 可扩展样式表语言)：
           特点：XML语法、平台无关、基于模式匹配准则、闭包（输入和输出的数据结构相同）、可递归
     XPath：以路径的方式进行XML文档元素的定位
     
-    
+XPath：
+	XPath节点术语：Node、Atomic Value、Parent、Children、Siblings、Ancestor、Descendant
+	Step：.../axis::nodetag[predicate]/...
+		axis（轴）：定义相对于当前节点的节点集
+		nodetag：内含节点的标记
+		predicate：可选的节点过滤器，多个predicate可以并列
+	使用一般的语法也可以完成轴的功能
+	predicate函数，用的时候再查
+
+
