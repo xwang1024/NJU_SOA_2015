@@ -35,12 +35,30 @@ XSL(eXtensible Stylesheet Language 可扩展样式表语言)：
     XPath：以路径的方式进行XML文档元素的定位
     
 XPath：
-	XPath节点术语：Node、Atomic Value、Parent、Children、Siblings、Ancestor、Descendant
-	Step：.../axis::nodetag[predicate]/...
-		axis（轴）：定义相对于当前节点的节点集
-		nodetag：内含节点的标记
-		predicate：可选的节点过滤器，多个predicate可以并列
-	使用一般的语法也可以完成轴的功能
-	predicate函数，用的时候再查
+    XPath节点术语：Node、Atomic Value、Parent、Children、Siblings、Ancestor、Descendant
+    Step：.../axis::nodetag[predicate]/...
+        axis（轴）：定义相对于当前节点的节点集
+        nodetag：内含节点的标记
+        predicate：可选的节点过滤器，多个predicate可以并列
+    使用一般的语法也可以完成轴的功能
+    predicate函数，用的时候再查
 
+XSLT：
+    转换过程：选择符合Pattern的节点、选择模板、转换、生成结果 / 继续匹配Pattern
+    组成元素：XML文档标识、xls:stylesheet根元素、文档顶级元素例如inport等、模板、处理过程
+    template元素：match的值为XPath，为模板匹配一个元素
+    apply-templates元素：选择当前元素的所有孩子，并且为每一个孩子元素都选择模板来匹配，默认执行value-of操作
+    call-template元素：模板引用（对于模板可指定name属性，然后在call-template元素中将name设为需要引用的模板）
+    for-each元素：包含select属性，属性值为XPath，遍历选中的元素，应用以下的模板
+    if元素：包含test属性，值为XPath（XPath中有一些条件函数也可以使用）,使用的例子：给元素之间加上逗号
+    choose元素：其中包含when、otherwise元素，相当于switch的效果，when相当于case，otherwise相当于default
+    value-of元素：包含select属性，对指定元素进行取值操作
+    element元素：自行创建一个元素，其中还可以包含其它element或attribute，可以方便地实现xml到xml的转换？
+    使用eclipse转换xml到html好像有问题。。。
 
+XSLT的高端用法：
+    number元素：常用于给元素进行编号，可以指定编号的模式、受影响的元素、深度
+    sort元素：一般和for-each之中使用，属性包括order、lang、data-type、case-order
+    属性值模板：{/student/@schoolId} 直接可以取到属性的值，还可以出现再双引号之间
+    variable元素：其中使用value-of进行变量声明，使用$name来进行变量使用，variable一经声明就不可改变
+    param元素和with-param元素：和variable作用类似，还可以实现公共命名变量，做到逻辑和数据分离
