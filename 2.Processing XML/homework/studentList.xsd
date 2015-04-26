@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://jw.nju.edu.cn/schema" xmlns="http://jw.nju.edu.cn/schema"
+	xmlns:school="http://www.nju.edu.cn/schema" elementFormDefault="qualified">
+	
+	<xs:include schemaLocation="student.xsd" />
+
+	<xs:element name="studentList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="student" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
