@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<studentList xmlns="http://jw.nju.edu.cn/schema">
+	<student>
+		<personInfo xmlns="http://www.nju.edu.cn/schema">
+			<id>121250040</id>
+			<name>陈云龙</name>
+			<gender>男</gender>
+			<birthday>1995-03-28</birthday>
+			<department>
+				<name>软件学院</name>
+				<type>院系</type>
+				<webSite>http://software.nju.edu.cn</webSite>
+			</department>
+		</personInfo>
+		<major>软件工程</major>
+		<grade>2012</grade>
+		<class>1</class>
+		<scoreList>
+			<scoreItem>
+				<courseId>000001</courseId>
+				<attendYear>2012</attendYear>
+				<attendTerm>1</attendTerm>
+				<classScore>95</classScore>
+				<homeworkScore>95</homeworkScore>
+				<midTermScore>95</midTermScore>
+				<endTermScore>95</endTermScore>
+				<totalScore>95</totalScore>
+				<comment/>
+			</scoreItem>
+			<scoreItem>
+				<courseId>000002</courseId>
+				<attendYear>2012</attendYear>
+				<attendTerm>1</attendTerm>
+				<classScore>95</classScore>
+				<homeworkScore>95</homeworkScore>
+				<midTermScore>95</midTermScore>
+				<endTermScore>95</endTermScore>
+				<totalScore>95</totalScore>
+				<comment/>
+			</scoreItem>
+		</scoreList>
+	</student>
+</studentList>

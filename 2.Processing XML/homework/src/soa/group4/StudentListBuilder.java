@@ -42,7 +42,7 @@ public class StudentListBuilder {
 		Element studentElement = student.toXMLElement(doc, "student");
 		Element listElement = doc.createElementNS("http://jw.nju.edu.cn/schema", "studentList");
 		listElement.appendChild(studentElement);
-		listElement.appendChild(studentElement);
+		listElement.appendChild(studentElement.cloneNode(true));
 //		listElement.setAttribute("xmlns:school", "http://www.nju.edu.cn/schema");
 //		listElement.setAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
 //		listElement.setAttribute("xsi:schemaLocation", "http://jw.nju.edu.cn/schema studentList.xsd");
