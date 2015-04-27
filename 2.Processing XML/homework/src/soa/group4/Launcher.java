@@ -18,10 +18,10 @@ import javax.xml.validation.SchemaFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import soa.group4.entities.Department;
-import soa.group4.entities.PersonInfo;
-import soa.group4.entities.ScoreItem;
-import soa.group4.entities.Student;
+import soa.group4.entity.Department;
+import soa.group4.entity.PersonInfo;
+import soa.group4.entity.ScoreItem;
+import soa.group4.entity.Student;
 
 public class Launcher {
 

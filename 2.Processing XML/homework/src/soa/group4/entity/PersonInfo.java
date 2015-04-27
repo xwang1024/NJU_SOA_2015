@@ -1,4 +1,4 @@
-package soa.group4.entities;
+package soa.group4.entity;
 
 import soa.group4.annotation.MyNode;
 import soa.group4.annotation.MyRootNode;
