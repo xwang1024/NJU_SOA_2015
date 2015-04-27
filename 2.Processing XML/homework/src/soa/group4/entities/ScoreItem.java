@@ -1,8 +1,11 @@
 package soa.group4.entities;
 
-import soa.group4.annotation.MyElement;
+import soa.group4.annotation.MyNode;
+import soa.group4.annotation.MyRootNode;
 
-public class ScoreItem extends MyXMLElement {
+@MyRootNode(name = "scoreItem", order = { "courseId", "attendYear", "attendTerm", "classScore", "homeworkScore", "midTermScore", "endTermScore",
+		"totalScore", "comment" }, NS = "http://jw.nju.edu.cn/schema")
+public class ScoreItem {
 	private String courseId;
 	private String attendYear;
 	private String attendTerm;
@@ -15,10 +18,6 @@ public class ScoreItem extends MyXMLElement {
 
 	public ScoreItem() {
 		super();
-	}
-
-	protected String getNSURL() {
-		return "http://jw.nju.edu.cn/schema";
 	}
 
 	public ScoreItem(String courseId, String attendYear, String attendTerm, Integer classScore, Integer homeworkScore, Integer midTermScore,
@@ -35,7 +34,7 @@ public class ScoreItem extends MyXMLElement {
 		this.comment = comment;
 	}
 
-	@MyElement(name = "courseId")
+	@MyNode(name = "courseId")
 	public String getCourseId() {
 		return courseId;
 	}
@@ -44,7 +43,7 @@ public class ScoreItem extends MyXMLElement {
 		this.courseId = courseId;
 	}
 
-	@MyElement(name = "attendYear")
+	@MyNode(name = "attendYear")
 	public String getAttendYear() {
 		return attendYear;
 	}
@@ -53,7 +52,7 @@ public class ScoreItem extends MyXMLElement {
 		this.attendYear = attendYear;
 	}
 
-	@MyElement(name = "attendTerm")
+	@MyNode(name = "attendTerm")
 	public String getAttendTerm() {
 		return attendTerm;
 	}
@@ -62,7 +61,7 @@ public class ScoreItem extends MyXMLElement {
 		this.attendTerm = attendTerm;
 	}
 
-	@MyElement(name = "classScore")
+	@MyNode(name = "classScore")
 	public Integer getClassScore() {
 		return classScore;
 	}
@@ -71,7 +70,7 @@ public class ScoreItem extends MyXMLElement {
 		this.classScore = classScore;
 	}
 
-	@MyElement(name = "homeworkScore")
+	@MyNode(name = "homeworkScore")
 	public Integer getHomeworkScore() {
 		return homeworkScore;
 	}
@@ -80,7 +79,7 @@ public class ScoreItem extends MyXMLElement {
 		this.homeworkScore = homeworkScore;
 	}
 
-	@MyElement(name = "midTermScore")
+	@MyNode(name = "midTermScore")
 	public Integer getMidTermScore() {
 		return midTermScore;
 	}
@@ -89,7 +88,7 @@ public class ScoreItem extends MyXMLElement {
 		this.midTermScore = midTermScore;
 	}
 
-	@MyElement(name = "endTermScore")
+	@MyNode(name = "endTermScore")
 	public Integer getEndTermScore() {
 		return endTermScore;
 	}
@@ -98,7 +97,7 @@ public class ScoreItem extends MyXMLElement {
 		this.endTermScore = endTermScore;
 	}
 
-	@MyElement(name = "totalScore")
+	@MyNode(name = "totalScore")
 	public Integer getTotalScore() {
 		return totalScore;
 	}
@@ -107,7 +106,7 @@ public class ScoreItem extends MyXMLElement {
 		this.totalScore = totalScore;
 	}
 
-	@MyElement(name = "comment")
+	@MyNode(name = "comment")
 	public String getComment() {
 		return comment;
 	}

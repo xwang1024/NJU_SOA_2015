@@ -1,8 +1,10 @@
 package soa.group4.entities;
 
-import soa.group4.annotation.MyElement;
+import soa.group4.annotation.MyNode;
+import soa.group4.annotation.MyRootNode;
 
-public class PersonInfo extends MyXMLElement {
+@MyRootNode(name = "personInfo", order = { "id", "name", "gender", "birthday", "department" }, NS = "http://www.nju.edu.cn/schema")
+public class PersonInfo {
 	private String id;
 	private String name;
 	private String gender;
@@ -11,10 +13,6 @@ public class PersonInfo extends MyXMLElement {
 
 	public PersonInfo() {
 		super();
-	}
-
-	protected String getNSURL() {
-		return "http://www.nju.edu.cn/schema";
 	}
 
 	public PersonInfo(String id, String name, String gender, String birthday, Department department) {
@@ -26,7 +24,7 @@ public class PersonInfo extends MyXMLElement {
 		this.department = department;
 	}
 
-	@MyElement(name = "id")
+	@MyNode(name = "id")
 	public String getId() {
 		return id;
 	}
@@ -35,7 +33,7 @@ public class PersonInfo extends MyXMLElement {
 		this.id = id;
 	}
 
-	@MyElement(name = "name")
+	@MyNode(name = "name")
 	public String getName() {
 		return name;
 	}
@@ -44,7 +42,7 @@ public class PersonInfo extends MyXMLElement {
 		this.name = name;
 	}
 
-	@MyElement(name = "gender")
+	@MyNode(name = "gender")
 	public String getGender() {
 		return gender;
 	}
@@ -53,7 +51,7 @@ public class PersonInfo extends MyXMLElement {
 		this.gender = gender;
 	}
 
-	@MyElement(name = "birthday")
+	@MyNode(name = "birthday")
 	public String getBirthday() {
 		return birthday;
 	}
@@ -62,7 +60,7 @@ public class PersonInfo extends MyXMLElement {
 		this.birthday = birthday;
 	}
 
-	@MyElement(name = "department", isSimple = false)
+	@MyNode(name = "department", isSimple = false)
 	public Department getDepartment() {
 		return department;
 	}

@@ -5,11 +5,10 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(ElementType.METHOD)
+@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface MyList {
+public @interface MyRootNode {
 	public String name();
 	public String NS() default "";
-	public String itemName();
-	public String itemNS() default "";
+	public String[] order();
 }

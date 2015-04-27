@@ -7,7 +7,12 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface MyElement {
+public @interface MyNode {
 	public boolean isSimple() default true;
+	public String NS() default "";
 	public String name();
+	public Type type() default Type.element;
+	public static enum Type {
+		element, attribute
+	}
 }

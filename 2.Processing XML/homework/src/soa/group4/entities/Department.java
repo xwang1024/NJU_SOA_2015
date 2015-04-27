@@ -1,9 +1,10 @@
 package soa.group4.entities;
 
-import soa.group4.annotation.MyElement;
+import soa.group4.annotation.MyNode;
+import soa.group4.annotation.MyRootNode;
 
-public class Department extends MyXMLElement {
-
+@MyRootNode(name = "department", order = { "name", "type", "webSite" }, NS = "http://www.nju.edu.cn/schema")
+public class Department {
 	private String name;
 	private String type;
 	private String webSite;
@@ -17,11 +18,7 @@ public class Department extends MyXMLElement {
 		this.webSite = webSite;
 	}
 
-	protected String getNSURL() {
-		return "http://www.nju.edu.cn/schema";
-	}
-
-	@MyElement(name = "name")
+	@MyNode(name = "name")
 	public String getName() {
 		return name;
 	}
@@ -30,7 +27,7 @@ public class Department extends MyXMLElement {
 		this.name = name;
 	}
 
-	@MyElement(name = "type")
+	@MyNode(name = "type")
 	public String getType() {
 		return type;
 	}
@@ -39,7 +36,7 @@ public class Department extends MyXMLElement {
 		this.type = type;
 	}
 
-	@MyElement(name = "webSite")
+	@MyNode(name = "webSite")
 	public String getWebSite() {
 		return webSite;
 	}
