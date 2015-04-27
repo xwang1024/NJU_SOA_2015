@@ -1,5 +1,7 @@
 package soa.group4.entities;
 
+import soa.group4.annotation.MyElement;
+
 public class PersonInfo extends MyXMLElement {
 	private String id;
 	private String name;
@@ -10,7 +12,7 @@ public class PersonInfo extends MyXMLElement {
 	public PersonInfo() {
 		super();
 	}
-	
+
 	protected String getNSURL() {
 		return "http://www.nju.edu.cn/schema";
 	}
@@ -24,6 +26,7 @@ public class PersonInfo extends MyXMLElement {
 		this.department = department;
 	}
 
+	@MyElement(name = "id")
 	public String getId() {
 		return id;
 	}
@@ -32,6 +35,7 @@ public class PersonInfo extends MyXMLElement {
 		this.id = id;
 	}
 
+	@MyElement(name = "name")
 	public String getName() {
 		return name;
 	}
@@ -40,6 +44,7 @@ public class PersonInfo extends MyXMLElement {
 		this.name = name;
 	}
 
+	@MyElement(name = "gender")
 	public String getGender() {
 		return gender;
 	}
@@ -48,6 +53,7 @@ public class PersonInfo extends MyXMLElement {
 		this.gender = gender;
 	}
 
+	@MyElement(name = "birthday")
 	public String getBirthday() {
 		return birthday;
 	}
@@ -56,6 +62,7 @@ public class PersonInfo extends MyXMLElement {
 		this.birthday = birthday;
 	}
 
+	@MyElement(name = "department", isSimple = false)
 	public Department getDepartment() {
 		return department;
 	}

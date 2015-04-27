@@ -8,11 +8,9 @@ import java.util.Map;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-public class MyXMLElement {
+public abstract class MyXMLElement {
 	
-	protected String getNSURL() {
-		return "";
-	}
+	protected abstract String getNSURL();
 	
 	public Element toXMLElement(Document doc, String elementName) {
 		Element element = doc.createElementNS(getNSURL(),elementName);

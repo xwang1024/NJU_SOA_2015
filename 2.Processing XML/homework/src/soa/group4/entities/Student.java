@@ -2,6 +2,9 @@ package soa.group4.entities;
 
 import java.util.List;
 
+import soa.group4.annotation.MyElement;
+import soa.group4.annotation.MyList;
+
 public class Student extends MyXMLElement {
 	private PersonInfo personInfo;
 	private String major;
@@ -12,7 +15,7 @@ public class Student extends MyXMLElement {
 	public Student() {
 		super();
 	}
-	
+
 	protected String getNSURL() {
 		return "http://jw.nju.edu.cn/schema";
 	}
@@ -26,6 +29,7 @@ public class Student extends MyXMLElement {
 		this.scoreList = scoreList;
 	}
 
+	@MyElement(name = "personInfo", isSimple = false)
 	public PersonInfo getPersonInfo() {
 		return personInfo;
 	}
@@ -34,6 +38,7 @@ public class Student extends MyXMLElement {
 		this.personInfo = personInfo;
 	}
 
+	@MyElement(name = "major")
 	public String getMajor() {
 		return major;
 	}
@@ -42,6 +47,7 @@ public class Student extends MyXMLElement {
 		this.major = major;
 	}
 
+	@MyElement(name = "grade")
 	public String getGrade() {
 		return grade;
 	}
@@ -50,6 +56,7 @@ public class Student extends MyXMLElement {
 		this.grade = grade;
 	}
 
+	@MyElement(name = "class")
 	public String getClass_() {
 		return class_;
 	}
@@ -58,6 +65,7 @@ public class Student extends MyXMLElement {
 		this.class_ = class_;
 	}
 
+	@MyList(name = "scoreList", itemName = "scoreItem", isItemSimple = false)
 	public List<ScoreItem> getScoreList() {
 		return scoreList;
 	}

@@ -1,5 +1,7 @@
 package soa.group4.entities;
 
+import soa.group4.annotation.MyElement;
+
 public class ScoreItem extends MyXMLElement {
 	private String courseId;
 	private String attendYear;
@@ -14,7 +16,7 @@ public class ScoreItem extends MyXMLElement {
 	public ScoreItem() {
 		super();
 	}
-	
+
 	protected String getNSURL() {
 		return "http://jw.nju.edu.cn/schema";
 	}
@@ -33,6 +35,7 @@ public class ScoreItem extends MyXMLElement {
 		this.comment = comment;
 	}
 
+	@MyElement(name = "courseId")
 	public String getCourseId() {
 		return courseId;
 	}
@@ -41,6 +44,7 @@ public class ScoreItem extends MyXMLElement {
 		this.courseId = courseId;
 	}
 
+	@MyElement(name = "attendYear")
 	public String getAttendYear() {
 		return attendYear;
 	}
@@ -49,6 +53,7 @@ public class ScoreItem extends MyXMLElement {
 		this.attendYear = attendYear;
 	}
 
+	@MyElement(name = "attendTerm")
 	public String getAttendTerm() {
 		return attendTerm;
 	}
@@ -57,6 +62,7 @@ public class ScoreItem extends MyXMLElement {
 		this.attendTerm = attendTerm;
 	}
 
+	@MyElement(name = "classScore")
 	public Integer getClassScore() {
 		return classScore;
 	}
@@ -65,6 +71,7 @@ public class ScoreItem extends MyXMLElement {
 		this.classScore = classScore;
 	}
 
+	@MyElement(name = "homeworkScore")
 	public Integer getHomeworkScore() {
 		return homeworkScore;
 	}
@@ -73,6 +80,7 @@ public class ScoreItem extends MyXMLElement {
 		this.homeworkScore = homeworkScore;
 	}
 
+	@MyElement(name = "midTermScore")
 	public Integer getMidTermScore() {
 		return midTermScore;
 	}
@@ -81,6 +89,7 @@ public class ScoreItem extends MyXMLElement {
 		this.midTermScore = midTermScore;
 	}
 
+	@MyElement(name = "endTermScore")
 	public Integer getEndTermScore() {
 		return endTermScore;
 	}
@@ -89,6 +98,7 @@ public class ScoreItem extends MyXMLElement {
 		this.endTermScore = endTermScore;
 	}
 
+	@MyElement(name = "totalScore")
 	public Integer getTotalScore() {
 		return totalScore;
 	}
@@ -97,6 +107,7 @@ public class ScoreItem extends MyXMLElement {
 		this.totalScore = totalScore;
 	}
 
+	@MyElement(name = "comment")
 	public String getComment() {
 		return comment;
 	}
