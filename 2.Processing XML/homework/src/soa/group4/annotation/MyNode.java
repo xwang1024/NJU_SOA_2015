@@ -12,6 +12,7 @@ public @interface MyNode {
 	public String NS() default "";
 	public String name();
 	public Type type() default Type.element;
+	public boolean needWrap() default true;
 	public static enum Type {
 		element, attribute
 	}

@@ -1,4 +1,4 @@
-package soa.group4.entity;
+package soa.group4.model;
 
 import java.util.List;
 

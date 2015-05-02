@@ -12,4 +12,5 @@ public @interface MyList {
 	public String NS() default "";
 	public String itemName();
 	public String itemNS() default "";
+	public boolean needWrap() default true;
 }
