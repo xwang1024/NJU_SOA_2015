@@ -100,6 +100,6 @@ public class Launcher {
 		helper3.initByCreate(false);
 		Document doc3 = helper3.getDocument();
 		upl.process(doc3);
-		helper3.save("scoreList.xml");
+		helper3.save("UnpassScoreList.xml");
 	}
 }
