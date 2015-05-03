@@ -8,6 +8,7 @@ import java.util.List;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import soa.group4.annotation.MyList;
@@ -182,8 +183,9 @@ public class ObjectToNodeConvertor {
 					element.appendChild(elementWillBeAdded);
 				} else {
 					NodeList extractedNodes = elementWillBeAdded.getChildNodes();
-					for (int j = 0; j < extractedNodes.getLength(); j++) {
-						element.appendChild(extractedNodes.item(j));
+					Node tmp;
+					while ((tmp = extractedNodes.item(0)) != null) {
+						element.appendChild(tmp);
 					}
 				}
 			} else if (attributeMap.containsKey(rootAnno.order()[i])) {

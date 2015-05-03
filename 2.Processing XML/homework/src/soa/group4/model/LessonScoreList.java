@@ -6,7 +6,7 @@ import java.util.List;
 import soa.group4.annotation.MyList;
 import soa.group4.annotation.MyRootNode;
 
-@MyRootNode(name = "课程成绩列表", NS = "http://www.nju.edu.cn/schema", order = { "课程成绩列表" })
+@MyRootNode(name = "课程成绩列表", NS = "http://jw.nju.edu.cn/schema", order = { "课程成绩列表" })
 public class LessonScoreList {
 	private List<LessonScore> lessonScoreList;
 

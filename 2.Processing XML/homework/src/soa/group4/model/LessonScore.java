@@ -7,7 +7,7 @@ import soa.group4.annotation.MyList;
 import soa.group4.annotation.MyNode;
 import soa.group4.annotation.MyRootNode;
 
-@MyRootNode(name = "课程成绩", NS = "http://www.nju.edu.cn/schema", order = { "课程编号", "成绩类型", "课程成绩列表" })
+@MyRootNode(name = "课程成绩", NS = "http://jw.nju.edu.cn/schema", order = { "课程编号", "成绩性质", "课程成绩列表" })
 public class LessonScore {
 	String lessonID;
 	String scoreType;
@@ -29,7 +29,7 @@ public class LessonScore {
 		this.lessonID = lessonID;
 	}
 
-	@MyNode(name = "成绩类型", type = MyNode.Type.attribute)
+	@MyNode(name = "成绩性质", type = MyNode.Type.attribute)
 	public String getScoreType() {
 		return scoreType;
 	}

@@ -3,7 +3,7 @@ package soa.group4.model;
 import soa.group4.annotation.MyNode;
 import soa.group4.annotation.MyRootNode;
 
-@MyRootNode(name = "成绩", NS = "http://www.nju.edu.cn/schema", order = { "学号", "得分" })
+@MyRootNode(name = "成绩", NS = "http://jw.nju.edu.cn/schema", order = { "学号", "得分" })
 public class Score {
 	String studentID;
 	int score;
