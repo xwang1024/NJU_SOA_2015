@@ -32,13 +32,13 @@ import soa.group4.model.Student;
  * Servlet implementation class GetStudent
  */
 @WebServlet("/GetStudent")
-public class GetStudent extends HttpServlet {
+public class GetStudentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public GetStudent() {
+	public GetStudentServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
